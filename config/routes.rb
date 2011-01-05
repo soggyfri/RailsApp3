@@ -1,6 +1,10 @@
 RailsApp3::Application.routes.draw do
   resources :microposts
 
+  match 'post/:id' => 'microposts#show'
+
+  root :to => 'microposts#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
