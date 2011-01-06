@@ -1,6 +1,6 @@
 <h1>Listing microposts</h1>
 
-<table>
+<table id="mpostTable">
   <tr>
     <th>Content</th>
     <th>User</th>
@@ -15,7 +15,7 @@
     <td><%= micropost.user_id %></td>
     <td><%= link_to 'Show', micropost %></td>
     <td><%= link_to 'Edit', edit_micropost_path(micropost) %></td>
-    <td><%= link_to 'Destroy', micropost, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', micropost, :confirm => 'Are you sure?', :method => :delete, :remote => true %></td>
   </tr>
 <% end %>
 </table>

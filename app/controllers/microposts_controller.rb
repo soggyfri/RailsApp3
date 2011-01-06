@@ -5,8 +5,9 @@ class MicropostsController < ApplicationController
     @microposts = Micropost.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render :nothing => false }# index.html.erb
       format.xml  { render :xml => @microposts }
+      format.js
     end
   end
 
@@ -78,6 +79,7 @@ class MicropostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(microposts_url) }
       format.xml  { head :ok }
+      format.js
     end
   end
 end
