@@ -4,3 +4,5 @@
 #TODO: find a way to determine the row
 #test =  dom_id(micropost)
 page.remove dom_id(@temp)
+
+#TODO: why isn't page.remove working?? @temp has proper id of the element
