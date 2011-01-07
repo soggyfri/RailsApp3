@@ -1,3 +1,6 @@
 # TODO Operate on the page object
 #page.alert("hello!")
-page[:mpostTable].delete(micropost) { |unusedlocal|  }
+
+#TODO: find a way to determine the row
+#test =  dom_id(micropost)
+page.remove dom_id(@temp)

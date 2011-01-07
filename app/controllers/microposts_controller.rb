@@ -74,7 +74,9 @@ class MicropostsController < ApplicationController
   # DELETE /microposts/1.xml
   def destroy
     @micropost = Micropost.find(params[:id])
+    @temp = dom_id(@micropost)
     @micropost.destroy
+    
 
     respond_to do |format|
       format.html { redirect_to(microposts_url) }
