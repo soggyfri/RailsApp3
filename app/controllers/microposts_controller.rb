@@ -1,5 +1,5 @@
 class MicropostsController < ApplicationController
-  # GET /microposts
+  
   # GET /microposts.xml
   def index
     @microposts = Micropost.all
@@ -12,6 +12,7 @@ class MicropostsController < ApplicationController
     end
   end
 
+  # GET /microposts
   def home
     respond_to do |format|
       format.html {render :home}

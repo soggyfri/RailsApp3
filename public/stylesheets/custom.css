@@ -12,3 +12,57 @@ section {
     padding: 20px;
     background: #EEF66C
 }
+
+
+a{
+    color: #09c
+}
+
+a:hover {
+    color: #069;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #069;
+}
+
+nav {
+    background-color: white;
+    white-space: nowrap;
+}
+
+nav ul {
+    margin: 0;
+    padding: 5px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0.4em 0;
+}
+
+nav ul li a {
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+a.signup_button{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    width: 190px;
+    color: #fff;
+    background: #006400;
+    font-size: 150%;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.round {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
