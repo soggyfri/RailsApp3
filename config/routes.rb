@@ -5,7 +5,7 @@ RailsApp3::Application.routes.draw do
 
   match 'post/:id' => 'microposts#show'
 
-  root :to => 'microposts#index'
+  root :to => 'microposts#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -6,9 +6,15 @@ class MicropostsController < ApplicationController
 
    
     respond_to do |format|
-      format.html { render :home } #home.html.erb
+      format.html { render } #index.html.erb
       format.xml  { render :xml => @microposts }
       format.js
+    end
+  end
+
+  def home
+    respond_to do |format|
+      format.html {render :home}
     end
   end
 
