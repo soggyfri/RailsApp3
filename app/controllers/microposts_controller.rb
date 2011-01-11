@@ -4,8 +4,9 @@ class MicropostsController < ApplicationController
   def index
     @microposts = Micropost.all
 
+   
     respond_to do |format|
-      format.html { render :nothing => false }# index.html.erb
+      format.html { render :home } #home.html.erb
       format.xml  { render :xml => @microposts }
       format.js
     end
