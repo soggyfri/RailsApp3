@@ -19,6 +19,10 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def help
+          #help.html.erb
+  end
+
   # GET /microposts/1
   # GET /microposts/1.xml
   def show

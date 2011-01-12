@@ -3,7 +3,10 @@ RailsApp3::Application.routes.draw do
 
   resources :microposts
 
-  match 'post/:id' => 'microposts#show'
+  #match 'post/:id', :to => 'microposts#show'
+  match 'signup',   :to => 'users#new'
+
+  match '/help',    :to => 'microposts#help'
 
   root :to => 'microposts#home'
 

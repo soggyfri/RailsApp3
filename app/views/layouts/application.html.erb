@@ -10,19 +10,24 @@
   <div class="container" >
 
     <div id="header" class="span-15"> <h1> Link to logo here </h1> </div>
-    <nav class="span-4 last round">
+    <nav class="span-4 last round prepend-top">
         <ul>
-          <li><%= link_to "Home", '#' %> </li>
-          <li><%= link_to "Help", '#' %> </li>
+          <li><%= link_to "Home", root_path %> </li>
+          <li><%= link_to "Help", help_path %> </li>
           <li><%= link_to "Sign In", '#' %> </li>
         </ul>
     </nav>
 
-    <section class="span-24 last" <%= yield %> </section>
+    <section class="span-17" <%= yield %> </section>
 
     <% if content_for?(:debug) %>
-      <section class="span-15"> Test: <%= yield :debug %> </section>
+      <section class="span-5 last"> Test: <%= yield :debug %> </section>
+      
     <% end %>
+      
+      <div class="colborder span-20 prepend-top"> 
+        <p> Put the site footer here! </p>
+      </div>
 
   </div>
 
