@@ -18,15 +18,19 @@
         </ul>
     </nav>
 
-    <section class="span-17" <%= yield %> </section>
+    <section class="span-17"> <%= yield %> </section>
 
     <% if content_for?(:debug) %>
       <section class="span-5 last"> Test: <%= yield :debug %> </section>
       
     <% end %>
       
-      <div class="colborder span-20 prepend-top"> 
+      <div class="span-20 prepend-top last"> 
         <p> Put the site footer here! </p>
+      </div>
+
+      <div class="span-24 last">
+	<%= debug(params) if Rails.env.development? %>
       </div>
 
   </div>

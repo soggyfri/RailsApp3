@@ -1,6 +1,6 @@
 RailsApp3::Application.routes.draw do
   resources :users
-
+  
   resources :microposts
 
   #match 'post/:id', :to => 'microposts#show'

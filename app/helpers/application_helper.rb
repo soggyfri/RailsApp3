@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def title
-    base_title = "Test App"
+    base_title = "Uconn::Facebook"
     if @micropost.nil?
       base_title
     else
