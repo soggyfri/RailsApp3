@@ -2,10 +2,10 @@ module ApplicationHelper
 
   def title
     base_title = "Uconn::Facebook"
-    if @micropost.nil?
+    if @title.nil?
       base_title
     else
-       @micropost 
+      "#{base_title} - #{@title}" 
     end
   end
 
