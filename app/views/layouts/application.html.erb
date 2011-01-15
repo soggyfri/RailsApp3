@@ -18,7 +18,12 @@
         </ul>
     </nav>
 
-    <section class="span-17"> <%= yield %> </section>
+    <section class="span-17 round"> 
+      <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"> <%= value %> </div>
+      <% end %>
+      <%= yield %> 
+    </section>
 
     <% if content_for?(:debug) %>
       <section class="span-5 last"> Test: <%= yield :debug %> </section>
