@@ -1,11 +1,13 @@
 RailsApp3::Application.routes.draw do
+  resources :sessions, :only => [:new, :create, :destroy]
   resources :users
   
   resources :microposts
 
   #match 'post/:id', :to => 'microposts#show'
   match 'signup',   :to => 'users#new'
-
+  match '/signin',   :to => 'sessions#new'
+  match '/signout',  :to => 'sessions#destroy'
   match '/help',    :to => 'microposts#help'
 
   root :to => 'microposts#home'
