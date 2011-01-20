@@ -1,0 +1,23 @@
+<h2> All users </h2>
+<%= will_paginate %>
+
+<ul class="users">
+<% @users.each do |user| %>
+<li> 
+  <%= gravatar_for user, :size => 30 %>
+  <%= link_to user.name, user %>
+</li>
+
+<% end %>
+</ul>
+
+<%
+=begin %>
+ instead of @users.each.... 
+ replace with:
+ render @user
+
+ what happens is render looks for partial _user.html.erb,
+ and renders each element of array with partial
+<%
+=end %> 

@@ -14,9 +14,15 @@ class MicropostsController < ApplicationController
 
   # GET /microposts
   def home
-    respond_to do |format|
-      format.html {render :home}
-    end
+		if signed_in?
+			@user = current_user
+#			redirect_to @user
+			render 'users/show'
+		else 
+			respond_to do |format|
+				format.html {render :home}
+			end 
+		end 
   end
 
   def help

@@ -3,7 +3,7 @@
 }
 
 body{
-    background: #6E6E6E /*#E4F6F8 */
+    background: #6E6E6E; /*#E4F6F8 */
  
 
 }
@@ -12,12 +12,29 @@ section {
     margin-top: 1em;
     font-size: 120%;
     padding: 20px;
-    background: #404F73 /* #0A3782 */  /* #EEF66C */
+    background: #404F73; /* #0A3782 */  /* #EEF66C */
+}
+
+section a{
+  color: #fcc;
+}
+
+section a:visited{
+  color: #fcc;
+}
+
+.users li{
+  list-style-type: none;
+  list-style: none;
+}
+
+ul.users{
+  margin-top: 2em;
 }
 
 
 a{
-    color: #09c
+    color: #09c;
 }
 
 a:hover {

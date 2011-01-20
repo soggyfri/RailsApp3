@@ -7,6 +7,7 @@ gem 'rails', '3.0.3'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'gravatar_image_tag'
+gem 'will_paginate', '3.0.pre'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -19,6 +20,7 @@ group :development do
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
 gem 'ruby-debug19'
+gem 'faker', '0.9.4'
 
 end
 
