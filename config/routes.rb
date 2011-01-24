@@ -1,16 +1,15 @@
 RailsApp3::Application.routes.draw do
-  resources :sessions, :only => [:new, :create, :destroy]
   resources :users
+  resources :sessions,   :only => [:new, :create, :destroy]
+	resources :microposts, :only => [:create, :destroy]
   
-  resources :microposts
-
   #match 'post/:id', :to => 'microposts#show'
   match 'signup',   :to => 'users#new'
   match '/signin',   :to => 'sessions#new'
   match '/signout',  :to => 'sessions#destroy'
   match '/help',    :to => 'microposts#help'
 
-  root :to => 'microposts#home'
+  root :to => 'users#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

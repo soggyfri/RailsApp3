@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	before_filter :authenticate, :only => [:edit, :update, :index]
+	before_filter :authenticate, :only => [:edit, :update, :index, :show]
 	before_filter :correct_user, :only => [:edit, :update]
 	before_filter :admin_user,   :only => :destroy
 
@@ -9,6 +9,15 @@ class UsersController < ApplicationController
 		@users = User.paginate(:page => params[:page])
 
 	end
+
+	def home
+		if signed_in?
+			@user = current_user
+			redirect_to current_user
+		else 
+			#display home
+		end 
+	end 
  
   def new
     @user = User.new
@@ -16,8 +25,12 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
-    @title = @user.name
+		
+			@user = User.find(params[:id])
+			@title = @user.name
+			@micropost = Micropost.new if signed_in?
+			@microposts = @user.microposts.paginate(:page => params[:page])
+		
   end
 
   def create
@@ -60,10 +73,6 @@ class UsersController < ApplicationController
 		redirect_to root_path unless current_user.admin?
 	end 
 	
-	def authenticate
-		deny_access unless signed_in?
-	end 
-
 	def correct_user
 		@user = User.find(params[:id])
 		redirect_to(root_path) unless current_user?(@user)

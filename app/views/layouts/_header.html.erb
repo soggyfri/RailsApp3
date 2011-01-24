@@ -1,13 +1,13 @@
 <div id="header" class="span-11"> <h1> Link to logo here </h1> </div> 
 <nav class="span-7 last round prepend-top">
   <ul>
-    <li><%= link_to "Home", root_path %> </li>
-    <li><%= link_to "Help", help_path %> </li>
-	  <% if signed_in? %>
-	  <li><%= link_to "Wall", users_path %></li>
+    <% if signed_in? %>
+    <li><%= link_to "Home", users_path %> </li>
+	  <li><%= link_to "Wall", root_path %></li>
 	  <li><%= link_to "Settings", edit_user_path(current_user) %></li>
     <li><%= link_to "Sign out", signout_path %></li>
    	<% else %>
+    <li><%= link_to "Home", root_path %> </li>
 	  <li><%= link_to "Sign In", signin_path %> </li>
 	  <% end %> 
   </ul>
