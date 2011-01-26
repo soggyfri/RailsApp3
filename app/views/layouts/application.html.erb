@@ -21,6 +21,10 @@
     <% if content_for?(:debug) %>
       <section class="span-5 last"> Test: <%= yield :debug %> </section>      
     <% end %>
+
+    <% if content_for?(:friends_tab) %>
+      <section class="span-5 last round"><%= yield :friends_tab %> </section>      
+    <% end %>
       
       <div class="span-20 prepend-top last"> 
         <p> Put the site footer here! </p>

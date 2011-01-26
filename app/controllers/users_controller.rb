@@ -7,13 +7,14 @@ class UsersController < ApplicationController
 	def index
 		@title = "All users"
 		@users = User.paginate(:page => params[:page])
-
+		@feed_items = current_user.feed.paginate(:page => params[:page])
+		@micropost = Micropost.new
 	end
 
 	def home
 		if signed_in?
 			@user = current_user
-			redirect_to current_user
+			redirect_to current_user			
 		else 
 			#display home
 		end 
@@ -26,10 +27,10 @@ class UsersController < ApplicationController
   
   def show
 		
-			@user = User.find(params[:id])
-			@title = @user.name
-			@micropost = Micropost.new if signed_in?
-			@microposts = @user.microposts.paginate(:page => params[:page])
+		@user = User.find(params[:id])
+		@title = @user.name
+		@micropost = Micropost.new if signed_in?
+		@microposts = @user.microposts.paginate(:page => params[:page])
 		
   end
 
