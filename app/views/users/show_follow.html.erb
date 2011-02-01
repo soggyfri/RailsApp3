@@ -1,0 +1,12 @@
+<% unless @users.empty? %>
+<table summary="Showing following/follwer user(s)">
+ <% @users.each do |user| %>
+<tr>
+  <td>
+    <%= link_to user.name, user %>
+  </td>
+</tr>
+<% end %>
+</table>
+<%= will_paginate @users %>
+<% end %>

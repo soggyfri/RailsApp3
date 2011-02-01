@@ -39,7 +39,7 @@ def populate_microposts
 end 
 
 def populate_follow
-    users = Users.all
+    users = User.all
     user  = users.first
     following = users[1..50]
     followers = users[3..40]

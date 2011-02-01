@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   
   def show
 		
-		@user = User.find(params[:id])
+		@user = User.find(params[:id])		
 		@title = @user.name
 		@micropost = Micropost.new if signed_in?
 		@microposts = @user.microposts.paginate(:page => params[:page])
@@ -55,7 +55,8 @@ class UsersController < ApplicationController
 	end 
 
 	def edit 
-		@title = "Edit"
+ 		@title = "Edit"
+		debugger
 	end 
 
 	def update
@@ -66,7 +67,21 @@ class UsersController < ApplicationController
 			@title = "Edit"
 			render 'edit'
 		end 
-	end 
+	end
+
+def following 
+	@title = "Following"
+	@user = User.find(params[:id])
+	@users = @user.following.paginate(:page => params[:page])
+	render 'show_follow'
+end  
+
+def followers
+	@title = "Followers"
+	@user  = User.find(params[:id])
+        @users = @user.followers.paginate(:page => params[:page])
+	render 'show_follow'
+end 
 
 	private 
 

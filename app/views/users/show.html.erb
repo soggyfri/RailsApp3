@@ -20,6 +20,7 @@
 <%= will_paginate @microposts %>
 <% end %> 
 
-<% content_for :friends_tab do 
-   render 'shared/stats'
-   end %>
+<% content_for :friends_tab do  render 'shared/stats'  end %>
+
+
+<% content_for :friends_tab do  render 'follow_form'   end %>

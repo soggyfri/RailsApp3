@@ -22,8 +22,8 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
 
 	def feed
-		microposts
-		#Micropost.where("user.id = ?", id)
+#		microposts
+		Micropost.from_users_followed_by(self)
 	end 
 
   def has_password?(submitted_password)
