@@ -4,11 +4,11 @@ class MicropostsController < ApplicationController
 	before_filter :authorized_user, :only => :destroy
 
 	def create
+		debugger
 		@micropost = current_user.microposts.build(params[:micropost])
 	  if @micropost.save
 			#TODO: why doesn't flash display?
-			flash[:success] = "New post created"
-			debugger
+			flash[:success] = "New post created"			
 		else  
 			flash[:error] = "Failed to create post"			
 		end
