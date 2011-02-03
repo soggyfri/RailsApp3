@@ -5,14 +5,17 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
 
 	has_many  :microposts, :dependent => :destroy
-  has_many  :relationships, :foreign_key => "follower_id", 
-	                          :dependent => :destroy
-	has_many  :following, :through => :relationships, :source => :followed
+  
+  has_many  :relationships, :foreign_key => "user_id", :dependent => :destroy
+  has_many  :friends, :through => :relationships, :foreign_key => "friend_id", :class_name => "User"
 
-	has_many  :reverse_relationships, :foreign_key => "followed_id", 
+=begin
+	has_many  :reverse_relationships, :foreign_key => "friend_id",
                                     :class_name  => "Relationship",
 	                                  :dependent   => :destroy
-  has_many :followers, :through => :reverse_relationships, :source => :follower
+=end
+
+ # has_many :followers, :through => :reverse_relationships, :source => :follower
 
 #TODO: put limitations on email format with regexp
   validates :name, :presence => true, :length => { :maximum => 50 }
@@ -51,7 +54,12 @@ class User < ActiveRecord::Base
 
 	def unfollow!(followed)
 		relationships.find_by_followed_id(followed).destroy
-	end 
+  end
+
+  def friend?(user)
+    relationships.find_by_friend_id(user)
+  end
+
 
   private
   

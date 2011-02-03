@@ -1,15 +1,16 @@
 class CreateRelationships < ActiveRecord::Migration
   def self.up
     create_table :relationships do |t|
-      t.integer :follower_id
-      t.integer :followed_id
-
+      t.integer :user_id
+      t.integer :friend_id
+      t.boolean :approved
       t.timestamps
     end
 
-		add_index :relationships, :follower_id
-		add_index :relationships, :followed_id
-		add_index :relationships, [:followed_id, :follower_id], :unique => true
+		add_index :relationships, :user_id
+		add_index :relationships, :friend_id
+		add_index :relationships, [:user_id, :friend_id], :unique => true
+    change_column_default(:relationships, :approved, false)
   end
 
   def self.down

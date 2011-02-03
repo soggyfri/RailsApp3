@@ -5,7 +5,7 @@ RailsApp3::Application.routes.draw do
 
   resources :users do 
 		member do 
-			get :following, :followers
+			get :friends
 		end 
 	end 
 
