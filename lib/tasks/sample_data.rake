@@ -4,9 +4,9 @@ namespace :db do
            desc "Fill dabase with sample data"
           task :populate => :environment do
           Rake::Task['db:reset'].invoke
-          populate_users
-          populate_microposts           
-          populate_follow
+#          populate_users
+#          populate_microposts
+#          populate_follow
    end
  end
 

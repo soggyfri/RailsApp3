@@ -7,7 +7,9 @@ class MicropostsController < ApplicationController
 		@micropost = current_user.microposts.build(params[:micropost])
     @redirect_user = User.find(params[:micropost][:recipient])
 	  if @micropost.save
-			#TODO: why doesn't flash display?
+			#Note: flash does not work when redirect_to root_path because
+      #root_path -> / -> redirect_to current_user, flash is erased after the
+      #first redirect so it won't appear by redirect_to current_user
 			flash[:success] = "New post created"			
 		else  
 			flash[:error] = "Failed to create post"			

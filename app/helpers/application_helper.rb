@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def title
-    base_title = "Uconn::Facebook"
+    base_title = "Uconn::Social"
     if @title.nil?
       base_title
     else
