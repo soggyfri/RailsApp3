@@ -1,8 +1,7 @@
 class RelationshipsController < ApplicationController
 
   def create
-   # debugger
-		@user = User.find(params[:relationship][:friend_id])
+    @user = User.find(params[:relationship][:friend_id])
 		current_user.addAsFriend!(@user)
 		respond_to do |format|
 			format.html { redirect_to @user }

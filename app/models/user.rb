@@ -72,7 +72,12 @@ class User < ActiveRecord::Base
   end
 
   def addAsFriend!(user)
-    relationships.create(:friend_id => user)
+    relationships.create(:friend_id => user.id)
+  end
+
+  def waitingForApproval?(user)
+    rel = Relationship.find_by_user_id_and_friend_id(user, self)
+    rel.nil? ? false : !rel.approved?
   end
 
 
