@@ -1,5 +1,3 @@
-
-
 namespace :db do
            desc "Fill dabase with sample data"
           task :populate => :environment do
