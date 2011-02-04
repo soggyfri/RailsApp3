@@ -68,15 +68,6 @@ class User < ActiveRecord::Base
 
   #return a list of pending friendships
   def pending_friends
-=begin
-      pendingUsers = Array.new
-      users.each_with_index do |user, i|
-        unless Relationship.find(user).approved?
-            pendingUsers.push(Relationship.find(user))
-        end
-      end
-    return pendingUsers
-=end
     Relationship.find_all_by_friend_id_and_approved(self,false)
   end
 

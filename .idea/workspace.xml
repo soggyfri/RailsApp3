@@ -5,30 +5,22 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list default="true" id="397e29a6-0deb-4faf-b48c-164134ccab16" name="html" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/relationships/_relationship.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/relationships/update.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/friends.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/microposts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/microposts_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/users/_messages.html.erb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/microposts/_micropost.html.erb" afterPath="$PROJECT_DIR$/app/views/microposts/_micropost.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/relationships/_relationship.html.erb" afterPath="$PROJECT_DIR$/app/views/relationships/_relationship.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_stats.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_stats.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_follow.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_follow.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_follow_form.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_follow_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_unfollow.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_unfollow.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
     <list id="9582d05d-eeb4-4b6f-a69a-21a6e81f6b31" name="models" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/relationships_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/relationships_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/relationship.rb" afterPath="$PROJECT_DIR$/app/models/relationship.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
     </list>
     <ignored path="RailsApp3.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/app/controllers/relationships_controller.rb" changelist="397e29a6-0deb-4faf-b48c-164134ccab16" time="1296797002184" ignored="true" />
-    <file path="$PROJECT_DIR$/app/models/user.rb" changelist="397e29a6-0deb-4faf-b48c-164134ccab16" time="1296801413538" ignored="true" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="397e29a6-0deb-4faf-b48c-164134ccab16" time="1296801415028" ignored="false" />
+    <file path="$PROJECT_DIR$/app/controllers/relationships_controller.rb" changelist="397e29a6-0deb-4faf-b48c-164134ccab16" time="1296802181202" ignored="true" />
+    <file path="$PROJECT_DIR$/app/models/user.rb" changelist="397e29a6-0deb-4faf-b48c-164134ccab16" time="1296801626907" ignored="true" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="397e29a6-0deb-4faf-b48c-164134ccab16" time="1296802574132" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,10 +68,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="26" selection-start="2455" selection-end="2455" vertical-scroll-proportion="0.89492756">
+            <state line="70" column="63" selection-start="2258" selection-end="2258" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="relationships_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/relationships_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="4" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -94,19 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_relationship.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_relationship.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/relationships/_relationship.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="11" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_messages.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/_messages.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="275" selection-end="374" vertical-scroll-proportion="-7.6923075">
+            <state line="1" column="38" selection-start="51" selection-end="51" vertical-scroll-proportion="0.036231883">
               <folding />
             </state>
           </provider>
@@ -209,16 +201,16 @@
         <option value="$PROJECT_DIR$/app/views/relationships/update.html.erb" />
         <option value="$PROJECT_DIR$/app/views/microposts/_micropost.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/_messages.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/relationships_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/shared/_stats.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/_follow.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/_follow_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/_unfollow.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/users/friends.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/relationships/_relationship.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/relationships_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/relationships/_relationship.html.erb" />
       </list>
     </option>
   </component>
@@ -718,7 +710,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2961" y="25" width="1282" height="754" extended-state="6" />
+    <frame x="-5921" y="25" width="1282" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -798,13 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/relationships_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/_unfollow.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="0" selection-start="3" selection-end="3" vertical-scroll-proportion="-2.3076923">
@@ -854,20 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/_messages.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="275" selection-end="374" vertical-scroll-proportion="-7.6923075">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/relationships/_relationship.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="4" selection-start="759" selection-end="759" vertical-scroll-proportion="-11.538462">
@@ -877,7 +848,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="26" selection-start="2455" selection-end="2455" vertical-scroll-proportion="0.89492756">
+        <state line="70" column="63" selection-start="2258" selection-end="2258" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/relationships_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="4" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/relationships/_relationship.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="38" selection-start="51" selection-end="51" vertical-scroll-proportion="0.036231883">
           <folding />
         </state>
       </provider>

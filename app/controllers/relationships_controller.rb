@@ -1,7 +1,7 @@
 class RelationshipsController < ApplicationController
 
   def create
-    debugger
+   # debugger
 		@user = User.find(params[:relationship][:friend_id])
 		current_user.addAsFriend!(@user)
 		respond_to do |format|
@@ -23,6 +23,12 @@ class RelationshipsController < ApplicationController
     @new_friend = Relationship.find(params[:id])
     @new_friend.approved= true
     @new_friend.save
+
+    symetric_friend = User.find(@new_friend.friend_id);
+    rel = symetric_friend.relationships.build(:friend_id => @new_friend.user_id)
+    rel.approved= true
+    rel.save
+
     redirect_to root_path
   end
 
