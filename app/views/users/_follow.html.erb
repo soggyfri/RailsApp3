@@ -1,6 +1,7 @@
-<%= form_for current_user.relationships.build(@user)  do |f|  %>
+
+<%= form_for current_user.relationships.build(:friend_id => @user.id)  do |f|  %>
  
- <div> <%= f.hidden_field :user_id %></div>
- <div class="actions"><%= f.submit "Follow" %></div>
+ <div> <%= f.hidden_field :friend_id %></div>
+ <div class="actions"><%= f.submit "Add as Friend" %></div>
 <% end %>
 

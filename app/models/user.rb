@@ -7,20 +7,24 @@ class User < ActiveRecord::Base
 	has_many  :microposts, :dependent => :destroy
   
   has_many  :relationships, :foreign_key => "user_id", :dependent => :destroy
-  has_many  :friends, :through => :relationships, :foreign_key => "friend_id", :class_name => "User"
+  has_many  :friends, :through => :relationships,
+                      :foreign_key => "friend_id",
+                      :class_name => "User",
+                      :conditions => ['relationships.approved = ?', true]
 
-=begin
 	has_many  :reverse_relationships, :foreign_key => "friend_id",
                                     :class_name  => "Relationship",
-	                                  :dependent   => :destroy
-=end
+                                    :dependent   => :destroy
 
- # has_many :followers, :through => :reverse_relationships, :source => :follower
+ has_many   :users,  :through => :reverse_relationships,
+                        :foreign_key => "user_id",
+                        :class_name => "User"
 
-#TODO: put limitations on email format with regexp
+  #TODO: put limitations on email format with regexp
+  #TODO: change :password length between 6..20
   validates :name, :presence => true, :length => { :maximum => 50 }
   validates :email, :presence => true, :uniqueness => { :case_sensitive => false }
-  validates :password, :presence => true, :confirmation => true, :length => { :within => 6..20 }
+  validates :password, :presence => true, :confirmation => true, :length => { :within => 1..20 }
   
   before_save :encrypt_password
 
@@ -57,7 +61,27 @@ class User < ActiveRecord::Base
   end
 
   def friend?(user)
-    relationships.find_by_friend_id(user)
+    #return false if not a friend or not approved.
+    friend = relationships.find_by_friend_id(user)
+    friend.nil? ? false : friend.approved?
+  end
+
+  #return a list of pending friendships
+  def pending_friends
+=begin
+      pendingUsers = Array.new
+      users.each_with_index do |user, i|
+        unless Relationship.find(user).approved?
+            pendingUsers.push(Relationship.find(user))
+        end
+      end
+    return pendingUsers
+=end
+    Relationship.find_all_by_friend_id_and_approved(self,false)
+  end
+
+  def addAsFriend!(user)
+    relationships.create(:friend_id => user)
   end
 
 

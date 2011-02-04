@@ -1,0 +1,4 @@
+<% User.find(params[:id]).friends.each do |fri| %>
+   <%= fri.name  %>
+
+<% end %>

@@ -11,7 +11,11 @@
 
     <%= render 'layouts/header' %>
 
-    <section class="span-17 round"> 
+     <% if content_for?(:messages_tab) %>
+           <section class="span-17  round"> <%= yield :messages_tab %></section>
+     <% end  %>
+
+    <section class="span-17 round">
       <% flash.each do |key, value| %>
       <div class="flash <%= key %>"> <%= value %> </div>
       <% end %>
@@ -23,8 +27,10 @@
     <% end %>
 
     <% if content_for?(:friends_tab) %>
-      <section class="span-5 last round"><%= yield :friends_tab %> </section>      
+      <section class="span-5 last round"><%= yield :friends_tab %> </section>
     <% end %>
+
+
       
       <div class="span-20 prepend-top last"> 
         <p> Put the site footer here! </p>

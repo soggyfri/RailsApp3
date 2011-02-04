@@ -1,8 +1,9 @@
 class RelationshipsController < ApplicationController
 
   def create
-		@user = User.find(params[:relationship][:followed_id])
-		current_user.follow!(@user)
+    debugger
+		@user = User.find(params[:relationship][:friend_id])
+		current_user.addAsFriend!(@user)
 		respond_to do |format|
 			format.html { redirect_to @user }
 			format.js
@@ -16,6 +17,13 @@ class RelationshipsController < ApplicationController
 			format.html  { redirect_to @user }
 			format.js 
 		end 
+  end
+
+  def update
+    @new_friend = Relationship.find(params[:id])
+    @new_friend.approved= true
+    @new_friend.save
+    redirect_to root_path
   end
 
 end

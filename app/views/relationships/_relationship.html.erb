@@ -1,0 +1,12 @@
+<% #debugger
+    user = User.find(relationship)%>
+
+<%= form_for relationship do |f| %>
+    <div class="field">
+        <%=  f.label user.name %>  wants to become friends with you.
+    </div>
+     <div class="actions">
+       <%= f.submit "Allow" %>
+       <%= f.submit "Deny" %>
+     </div>
+<% end  %>
