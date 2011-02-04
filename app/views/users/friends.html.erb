@@ -1,4 +1,4 @@
 <% User.find(params[:id]).friends.each do |fri| %>
-   <%= fri.name  %>
+   <%= link_to fri.name, fri%>
 
 <% end %>

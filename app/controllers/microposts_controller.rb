@@ -3,16 +3,16 @@ class MicropostsController < ApplicationController
 	before_filter :authenticate
 	before_filter :authorized_user, :only => :destroy
 
-	def create
-		debugger
+	def create	
 		@micropost = current_user.microposts.build(params[:micropost])
+    @redirect_user = User.find(params[:micropost][:recipient])
 	  if @micropost.save
 			#TODO: why doesn't flash display?
 			flash[:success] = "New post created"			
 		else  
 			flash[:error] = "Failed to create post"			
 		end
-		redirect_to root_path 
+		redirect_to @redirect_user
 
 	end 
 

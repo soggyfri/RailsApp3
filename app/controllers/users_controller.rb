@@ -26,11 +26,11 @@ class UsersController < ApplicationController
   end
   
   def show
-		
 		@user = User.find(params[:id])		
 		@title = @user.name
 		@micropost = Micropost.new if signed_in?
-		@microposts = @user.microposts.paginate(:page => params[:page])
+		#@microposts = @user.microposts.paginate(:page => params[:page])
+    @microposts = Micropost.find_all_by_recipient(@user).paginate(:page => params[:page])
 		
   end
 
