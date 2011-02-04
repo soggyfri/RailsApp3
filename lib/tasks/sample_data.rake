@@ -1,4 +1,4 @@
-require 'faker'
+#require 'faker'
 
 namespace :db do
            desc "Fill dabase with sample data"
