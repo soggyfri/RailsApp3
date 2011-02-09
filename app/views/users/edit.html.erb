@@ -23,6 +23,10 @@
   <%= f.password_field :password_confirmation %>
 </div>
 
+<div class="field">
+  <%= f.file_field :file  %>
+</div>
+
 <div class="actons">
   <%= f.submit "Update" %>
 </div>
@@ -30,7 +34,8 @@
 <% end %>
 
 <br />
-<div>
+<!--<div>
   <%= gravatar_for @user %>
   <a href="http://gravatar.com/emails">Change</a>
-</div>
+</div>-->
+

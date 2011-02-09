@@ -46,8 +46,7 @@ class UsersController < ApplicationController
     end
   end
 
-	def destroy 
-		
+	def destroy
 		user = User.find(params[:id])
 		flash[:success] = "Deleted #{user.name}."
 		user.destroy
@@ -56,10 +55,10 @@ class UsersController < ApplicationController
 
 	def edit 
  		@title = "Edit"
-		debugger
 	end 
 
 	def update
+    debugger
 		if @user.update_attributes(params[:user])
 			flash[:success] = "Updated successfully"
 			redirect_to @user
