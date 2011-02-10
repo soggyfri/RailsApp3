@@ -6,7 +6,7 @@
       </h1>      
     </td>
     <td class="sidebar round">
-      <strong><%= image_tag @user.photo.url %>  <%= @user.name %> </strong><br /><br />
+      <strong><%= image_tag @user.photo.url(:thumb) %>  <%= @user.name %> </strong><br /><br />
       <strong>URL:</strong>  <%= link_to user_path(@user), @user %> <br />
       <strong>Posts:</strong> <%= @user.microposts.count %>
     </td>
