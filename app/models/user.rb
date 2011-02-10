@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_attached_file :photo,
                     :styles => {:thumb => "50x50>"},
                     :storage => :s3,
+                    :s3_credentials => S3_CREDENTIALS,
                     :whiny_thumbnails => true
 
 	has_many  :microposts, :dependent => :destroy
