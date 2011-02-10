@@ -1,6 +1,6 @@
 <h1> Edit User</h1>
 
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, :html => { :multipart => true}) do |f| %>
 <%= render 'shared/error_messages', :object => f.object %>
 
 <div class="field">
@@ -24,7 +24,8 @@
 </div>
 
 <div class="field">
-  <%= f.file_field :file  %>
+  <%= f.label :photo, "Profile Picture" %><br />
+  <%= f.file_field :photo  %>
 </div>
 
 <div class="actons">

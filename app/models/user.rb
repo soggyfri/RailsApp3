@@ -2,7 +2,11 @@ require 'digest'
 
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :photo
+
+  has_attached_file :photo,
+                    :styles => {:thumb => "50x50>"},
+                    :whiny_thumbnails => true
 
 	has_many  :microposts, :dependent => :destroy
   

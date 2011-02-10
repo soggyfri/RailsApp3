@@ -59,6 +59,7 @@ class UsersController < ApplicationController
 
 	def update
     debugger
+    @user = User.find(params[:id])
 		if @user.update_attributes(params[:user])
 			flash[:success] = "Updated successfully"
 			redirect_to @user
