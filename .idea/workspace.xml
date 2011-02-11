@@ -760,16 +760,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/s3.yml">
+    <entry file="file://$PROJECT_DIR$/config/initializers/s3.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="40" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
+        <state line="7" column="3" selection-start="341" selection-end="341" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/s3.rb">
+    <entry file="file://$PROJECT_DIR$/config/s3.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="3" selection-start="341" selection-end="341" vertical-scroll-proportion="0.0">
+        <state line="3" column="40" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
