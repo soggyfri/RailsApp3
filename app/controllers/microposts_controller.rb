@@ -13,8 +13,11 @@ class MicropostsController < ApplicationController
 			flash[:success] = "New post created"			
 		else  
 			flash[:error] = "Failed to create post"			
-		end
-		redirect_to @redirect_user
+    end
+    respond_to do |format|
+		  format.html  { redirect_to @redirect_user }
+      format.js      
+    end
 
 	end 
 

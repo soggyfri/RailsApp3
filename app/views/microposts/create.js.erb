@@ -1,0 +1,12 @@
+
+<% flash.discard(:success) %>
+
+var row_class = $('#user_feed tr:first').hasClass('even') ? "odd" : "even";
+
+$('#user_feed').prepend("<tr class=" + row_class + "><td class=\"micropost\">" +
+                        "<%=h @micropost %>" +
+                        "</td></tr>");
+
+//$('#user_feed').prepend("<tr><td>TEST</td></tr>");
+
+//$("#friends_tab").html("test");

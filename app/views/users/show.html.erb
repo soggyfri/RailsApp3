@@ -14,7 +14,7 @@
 </table>
 
 <% unless @microposts.nil?  %>
-<table class="microposts" summary="User posts">
+<table id="user_feed" class="microposts" summary="User posts">
   <%= render @microposts %>
 </table> 
 <%= will_paginate @microposts %>
