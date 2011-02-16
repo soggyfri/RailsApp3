@@ -3,10 +3,14 @@
 
 var row_class = $('#user_feed tr:first').hasClass('even') ? "odd" : "even";
 
+
+
+var content = '<%= escape_javascript(@micropost.content) %>'
+
 $('#user_feed').prepend("<tr class=" + row_class + "><td class=\"micropost\">" +
-                        "<%=h @micropost %>" +
+                        content +
                         "</td></tr>");
 
-//$('#user_feed').prepend("<tr><td>TEST</td></tr>");
+$("textarea#micropost_content").val("");
 
-//$("#friends_tab").html("test");
+
