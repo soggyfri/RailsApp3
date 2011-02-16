@@ -20,5 +20,7 @@ $('#user_feed').prepend("<tr class=" + row_class + "><td class=\"micropost\">" +
                         "</td></tr>");
 
 $("textarea#micropost_content").val("");
-
+<% if current_user?(User.find(params[:micropost][:recipient]))%>
+$("span#user_post_count").text("<%= u.microposts.count %>");
+<% end %>
 

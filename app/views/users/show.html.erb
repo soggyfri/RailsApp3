@@ -9,9 +9,9 @@
         <% end %>           
     </td>
     <td class="sidebar round">
-      <strong><%= image_tag @user.photo.url(:thumb) %>  <%= @user.name %> </strong><br /><br />
+      <strong><%= image_tag @user.photo.url(:thumb) %> <br /> <%= @user.name %> </strong><br /><br />
       <strong>URL:</strong>  <%= link_to user_path(@user), @user %> <br />
-      <strong>Posts:</strong> <%= @user.microposts.count %>
+      <strong>Posts:</strong> <span id="user_post_count"><%= @user.microposts.count %></span>
     </td>
   </tr>
 </table>
