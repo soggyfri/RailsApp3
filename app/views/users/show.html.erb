@@ -1,9 +1,12 @@
+
 <table class="profile" summary="User Information">
   <tr>
     <td class="main">
-      <h1>	      
+        <% if current_user?(@user) || current_user.friend?(@user) %>
 	      <%= render 'shared/micropost_form' %>
-      </h1>      
+        <% else %>
+            <p> add <%= @user.name %> as a friend to post</p>
+        <% end %>           
     </td>
     <td class="sidebar round">
       <strong><%= image_tag @user.photo.url(:thumb) %>  <%= @user.name %> </strong><br /><br />
