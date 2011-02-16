@@ -5,11 +5,10 @@ class UsersController < ApplicationController
 	before_filter :admin_user,   :only => :destroy
 
 	def index
-		@title = "All users"
-		@users = User.paginate(:page => params[:page])
-		@feed_items = current_user.feed.paginate(:page => params[:page])
-		@micropost = Micropost.new
-	end
+		@title = "Search"
+    @users =  User.search(params[:search])
+      
+		end
 
 	def home
 		if signed_in?
@@ -83,11 +82,6 @@ def followers
 	render 'show_follow'
 end
 
-=begin
-  def friends
-    @friends = friends
-  end
-=end
 
 	private 
 

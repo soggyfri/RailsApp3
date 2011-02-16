@@ -3,7 +3,7 @@ RailsApp3::Application.routes.draw do
 
   get "relationships/destroy"
 
-  resources :users do 
+  resources :users do
 		member do 
 			get :friends
 		end 
@@ -18,6 +18,8 @@ RailsApp3::Application.routes.draw do
   match '/signin',   :to => 'sessions#new'
   match '/signout',  :to => 'sessions#destroy'
   match '/help',    :to => 'microposts#help'
+
+  match '/search', :to => 'users#index'
 
   root :to => 'users#home'
 

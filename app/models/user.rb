@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation, :photo
 
+  cattr_reader :per_page
+  @@per_page = 10
+
   validates_attachment_size :photo, :less_than => 100.kilobytes
 
   has_attached_file :photo,
@@ -37,8 +40,7 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
 
 	def feed
-#		microposts
-		Micropost.from_users_followed_by(self)
+  	Micropost.from_users_followed_by(self)
 	end 
 
   def has_password?(submitted_password)
@@ -54,18 +56,6 @@ class User < ActiveRecord::Base
   def self.authenticate_with_salt(id, cookie_salt)
     user = find_by_id(id)
     ( user && user.salt == cookie_salt ) ? user : nil
-  end
-
-	def following?(followed)
-		relationships.find_by_followed_id(followed)
-	end 
-
-	def follow!(followed)
-		relationships.create!(:followed_id => followed.id)
-	end 
-
-	def unfollow!(followed)
-		relationships.find_by_followed_id(followed).destroy
   end
 
   def friend?(user)
@@ -86,6 +76,15 @@ class User < ActiveRecord::Base
   def waitingForApproval?(user)
     rel = Relationship.find_by_user_id_and_friend_id(user, self)
     rel.nil? ? false : !rel.approved?
+  end
+
+  def self.search(term)
+    if term
+      results = User.where("name  = ?", term)
+    else
+      results = User.all
+    end
+    return results
   end
 
 
