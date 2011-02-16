@@ -2,7 +2,7 @@
  <div id="follow_form">
    <% if @user.friend?(current_user) %>
     <%= render 'unfollow' %>
-   <% elsif @user.waitingForApproval?(current_user)%>
+   <% elsif @user.waitingForApproval?(current_user) || current_user.waitingForApproval?(@user) %>
     waiting for approval
    <% else  %>
        <%= render 'follow'   %>
