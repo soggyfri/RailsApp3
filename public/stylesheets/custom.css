@@ -13,6 +13,10 @@ section {
     background: #404F73; /* #0A3782 */  /* #EEF66C */
 }
 
+#main_content{
+    background: url("/images/background.png") repeat-y  scroll center;
+}
+
 section a{
   color: #fcc;
 }

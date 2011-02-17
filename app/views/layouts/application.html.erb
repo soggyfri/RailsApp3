@@ -15,7 +15,7 @@
            <section class="span-17  round"> <%= yield :messages_tab %></section>
      <% end  %>
 
-    <section class="span-17 round">
+    <section id="main_content" class="span-17 round">
       <% flash.each do |key, value| %>
       <div class="flash <%= key %>"> <%= value %> </div>
       <% end %>
