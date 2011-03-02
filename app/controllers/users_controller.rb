@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     User.select(:name).select(:id).each do |name|
       if( name.name =~ regexp )
         @userNames.push(name.id)
-      end
-    @users = User.find(@userNames)
+      end    
     end
+    @users = User.find(@userNames)
 
 		end
 
