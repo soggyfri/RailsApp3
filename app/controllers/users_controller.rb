@@ -6,8 +6,18 @@ class UsersController < ApplicationController
 
 	def index
 		@title = "Search"
-    @users =  User.search(params[:search])
-      
+    #@users =  User.search(params[:search])
+    return if params[:search] == nil
+    
+    regexp = /.*#{params[:search]}.*/i
+    @userNames = Array.new
+    User.select(:name).select(:id).each do |name|
+      if( name.name =~ regexp )
+        @userNames.push(name.id)
+      end
+    @users = User.find(@userNames)
+    end
+
 		end
 
 	def home
