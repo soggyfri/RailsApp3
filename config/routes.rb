@@ -1,4 +1,8 @@
 RailsApp3::Application.routes.draw do
+  get "chat/send"
+
+  get "chat/send_message"
+
   get "relationships/create"
 
   get "relationships/destroy"
@@ -20,6 +24,8 @@ RailsApp3::Application.routes.draw do
   match '/help',    :to => 'microposts#help'
 
   match '/search', :to => 'users#index'
+
+	match '/chat/send', :controller => 'chat', :action => 'send'
 
   root :to => 'users#home'
 

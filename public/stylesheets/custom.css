@@ -17,6 +17,10 @@ section {
     background: url("/images/background.png") repeat-y  scroll center;
 }
 
+#incoming_msg li{
+  list-style-type: none;
+}
+
 section a{
   color: #fcc;
 }

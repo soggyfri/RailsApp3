@@ -12,6 +12,8 @@ gem 'will_paginate', '3.0.pre2'
 gem 'paperclip', '2.3.8'
 gem 'aws-s3'
 
+gem 'juggernaut', :git => 'git://github.com/maccman/juggernaut.git'
+
 gem 'jquery-rails', '>= 0.2.6'
 
 # Use unicorn as the web server

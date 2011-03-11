@@ -28,6 +28,8 @@
 
 <% content_for :friends_tab do  render 'follow_form'   end %>
 
+<% content_for :chat_tab    do  render 'chat_form'     end %>
+
 <% #debugger
    if current_user?(@user)
     pending_users = @user.pending_friends   
@@ -35,5 +37,6 @@
       #debugger
       content_for :messages_tab do render pending_users end
     end 
-   end     %>
+   end     
+%>
 
