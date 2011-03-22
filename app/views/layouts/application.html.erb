@@ -35,14 +35,14 @@
 <% 
 =begin %> 
 <% if content_for?(:chat_tab) %>
-<section id="chat_tab" class="span-10 round"> <%= yield :chat_tab %> </section>
+<section id="chat_tab" class="span-5 round"> <%= yield :chat_tab %> </section>
 <div class="http://d1535.dyndns-server.com:8080"></div>
 <% end %> 
 <% 
 =end %>
 
 <% if signed_in? %>
- <section id="chat_tab" class="span-10 round"> <%= render 'chat_form' %></section>
+ <section id="chat_tab" class="span-5 round last"> <%= render 'chat_form' %></section>
       <div class="span-19 prepend-top last"> 
         <% image_tag("footer.png") %>
       </div>

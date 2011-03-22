@@ -14,7 +14,7 @@ section {
 }
 
 #main_content{
-    background: url("/images/background.png") repeat-y  scroll center;
+  /*  background: url("/images/background.png") repeat-y  scroll center; */
 }
 
 #incoming_msg li{

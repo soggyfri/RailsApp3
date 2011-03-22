@@ -22,7 +22,7 @@ var jug2 = new Juggernaut();
 
 <% form_tag('/chat/send', :id => 'chat_window', :remote => true) do %>
 
-<%= text_field_tag 'msg_body', '', :size => 30 %>
+<%= text_field_tag 'msg_body', '', :size => 15 %>
 <%= hidden_field_tag 'sender', @user.name %>
 <%= submit_tag 'Send Message' %>
 

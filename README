@@ -2,6 +2,7 @@
    ~/apps/redis-2.2.2/src/redis-server
 
 2) start push server
+   cd ~/apps/juggernaut
    sudo ~/apps/node/bin/node ~/apps/juggernaut/server.js 
 
 3) open console to project directory
