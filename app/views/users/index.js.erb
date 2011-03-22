@@ -1,0 +1,6 @@
+$("section#main_content").empty().append('<%= form_tag search_path, :method => 'get', :remote => true do %><%= content_tag :label do %>Search:<%= text_field_tag :search, params[:search] %><% end %><% end %>' +
+                                              '<% unless @users.nil?  %>' +
+                                              '<% @users.each do |user| %>' +
+                                              '<%= link_to user.name, user %><br/>' +
+                                              '<% end %>' +
+                                              '<% end %>');

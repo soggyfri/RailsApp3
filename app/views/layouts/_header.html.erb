@@ -2,8 +2,8 @@
 <nav class="span-7 last round prepend-top">
   <ul>
     <% if signed_in? %>
-    <li><%= link_to "Search", search_path %> </li>
-	  <li><%= link_to "Wall", root_path %></li>
+    <li><%= link_to "Search", search_path, :remote => true %> </li>
+	  <li><%= link_to "Wall", root_path, :remote => true %></li>
 	  <li><%= link_to "Settings", edit_user_path(current_user) %></li>
     <li><%= link_to "Sign out", signout_path %></li>
    	<% else %>

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20110209225607) do
     t.integer  "recipient"
   end
 
+  add_index "microposts", ["recipient"], :name => "index_microposts_on_recipient"
   add_index "microposts", ["user_id"], :name => "index_microposts_on_user_id"
 
   create_table "relationships", :force => true do |t|
@@ -42,7 +43,6 @@ ActiveRecord::Schema.define(:version => 20110209225607) do
     t.string   "encrypted_password"
     t.string   "salt"
     t.boolean  "admin",              :default => false
-    t.binary   "picture"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"

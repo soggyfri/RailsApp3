@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
 	def index
 		@title = "Search"
+		@user  = current_user
     #@users =  User.search(params[:search])
     return if params[:search] == nil
     
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
 
 		end
 
+
 	def home
 		if signed_in?
 			@user = current_user
@@ -33,6 +35,10 @@ class UsersController < ApplicationController
     @user = User.new
     @title = "Welcome new user!"
   end
+
+	def friends 
+		@user = current_user
+	end 
   
   def show
 		@user = User.find(params[:id])		

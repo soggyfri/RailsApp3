@@ -3,7 +3,15 @@
 <script type="text/javascript" charset="utf-8">
   var jug = new Juggernaut();
 
-  jug.subscribe("/chat/test", function(data){
+  jug.subscribe("/chat/<%= @user.id %>", function(data){
+  var li = $("<li/>");
+  li.text(data);
+  $("#incoming_msg").append(li);
+});
+
+var jug2 = new Juggernaut();
+
+  jug2.subscribe("/chat/global", function(data){
   var li = $("<li/>");
   li.text(data);
   $("#incoming_msg").append(li);
