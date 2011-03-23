@@ -18,7 +18,7 @@
 
   //menuYloc = parseInt( $(name).css("top").substring(0, $(name).css("top").indexOf("px") ) )
 
-  var disp = $(window).height() -160;
+  var disp = $(window).height() -150;
   $("#chat_tab").css("top", disp + 'px');
 
   $(window).scroll(function() {
@@ -33,6 +33,8 @@
 </head>
 <body>
   <div class="container" >
+
+    <div class="span-20 prepend-top " > </div>
 
     <%= render 'layouts/header' %>
 
