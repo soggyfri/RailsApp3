@@ -158,4 +158,26 @@ form.new_micropost textarea {
   margin-bottom: 0;
 }
 
+#incoming_msg {
+  height: 5em;
+  width: 28.8em;
+  margin-bottom: 0;
+  overflow: auto;
+
+}
+
+#chat_tab{
+/*  position: fixed;
+  bottom: 50px;
+  top: 400px; */
+  
+  position: absolute;
+  top: 350px;
+  width: 400px;
+  height: 100px;
+
+}
+
+
+
 

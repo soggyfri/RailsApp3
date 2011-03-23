@@ -1,4 +1,4 @@
-<div id="incoming_msg"> </div>
+<div id="incoming_msg"></div>
 
 <script type="text/javascript" charset="utf-8">
   var jug = new Juggernaut();
@@ -15,6 +15,9 @@ var jug2 = new Juggernaut();
   var li = $("<li/>");
   li.text(data);
   $("#incoming_msg").append(li);
+
+  var disp = $("#incoming_msg").scrollTop();
+  $("#incoming_msg").scrollTop(disp + 30);
 });
 
 </script>

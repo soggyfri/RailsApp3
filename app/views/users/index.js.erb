@@ -3,4 +3,5 @@ $("section#main_content").empty().append('<%= form_tag search_path, :method => '
                                               '<% @users.each do |user| %>' +
                                               '<%= link_to user.name, user %><br/>' +
                                               '<% end %>' +
-                                              '<% end %>');
+                                              '<% end %>' +
+                                              '<br></br>');
