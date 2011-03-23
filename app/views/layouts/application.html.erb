@@ -16,9 +16,14 @@
 
   $(document).ready(function(){
 
-//   menuYloc = parseInt( $(name).css("top").substring(0, $(name).css("top").indexOf("px") ) )
+  //menuYloc = parseInt( $(name).css("top").substring(0, $(name).css("top").indexOf("px") ) )
+
+  var disp = $(window).height() -160;
+  $("#chat_tab").css("top", disp + 'px');
 
   $(window).scroll(function() {
+  var offset = disp + $(document).scrollTop() + "px";
+  $(name).animate({top:offset}, {duration:200,queue:false});
 
   });
 
