@@ -3,7 +3,7 @@ class ChatController < ApplicationController
   def send(one, two)
 		#debugger
 
-		Juggernaut.redis_options[:host] = "d650.ath.cx"
+		#		Juggernaut.redis_options[:host] = "d650.ath.cx"
  		@msg				= params[:msg_body]
 		@sender			= params[:sender]
 		@recipient	= params[:recipient] 

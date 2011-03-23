@@ -35,8 +35,17 @@
 <% end %>
 
 <br />
-<!--<div>
-  <%= gravatar_for @user %>
-  <a href="http://gravatar.com/emails">Change</a>
-</div>-->
+
+<h2>Upload picture<h2>
+<%= form_for(:user_images, :url => picture_upload_path , :html=>{:multipart=>true}) do |f|  %>
+
+<div class="field">
+  <%= f.file_field :photo %>
+</div>
+
+<div class="actions">
+  <%= f.submit "Upload" %>
+</div>
+
+<% end %>
 

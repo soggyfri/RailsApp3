@@ -23,6 +23,7 @@ RailsApp3::Application.routes.draw do
   match '/signout',  :to => 'sessions#destroy'
   match '/help',    :to => 'microposts#help'
 
+	match 'picture_upload', :to => 'users#picture'
   match '/search', :to => 'users#index'
 
 	match '/chat/send', :controller => 'chat', :action => 'send'

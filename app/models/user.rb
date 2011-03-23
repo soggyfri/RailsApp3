@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
                     :s3_credentials => S3_CREDENTIALS,
                     :whiny_thumbnails => true
 
+	has_many :user_images, :dependent => :destroy
+
 	has_many  :microposts, :dependent => :destroy
   
   has_many  :relationships, :foreign_key => "user_id", :dependent => :destroy

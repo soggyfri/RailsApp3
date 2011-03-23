@@ -4,7 +4,10 @@ class UsersController < ApplicationController
 	before_filter :correct_user, :only => [:edit, :update]
 	before_filter :admin_user,   :only => :destroy
 
+	
+
 	def index
+		
 		@title = "Search"
 		@user  = current_user
     #@users =  User.search(params[:search])
@@ -41,12 +44,20 @@ class UsersController < ApplicationController
 	end 
   
   def show
+		 
 		@user = User.find(params[:id])		
 		@title = @user.name
 		@micropost = Micropost.new if signed_in?
-		#@microposts = @user.microposts.paginate(:page => params[:page])
-    @microposts = Micropost.find_all_by_recipient(@user).paginate(:page => params[:page])
 		
+		@microposts = Micropost.find_all_by_recipient(@user).paginate(:page => params[:page])
+		
+		
+	#	@count = @user.user_images.count
+		if @user.user_images.count != 0
+			@image = @user.user_images.find(1 + rand(@user.user_images.count) % @user.user_images.count )
+		else 			
+			@image = nil
+ 		end 
   end
 
   def create
@@ -97,6 +108,20 @@ def followers
         @users = @user.followers.paginate(:page => params[:page])
 	render 'show_follow'
 end
+
+
+def picture
+
+	@user = current_user
+	@image =	@user.user_images.build(:photo => params[:user_images][:photo])
+	
+	if @image.save 
+		flash[:success] = "Picture uploaded"			
+	else 
+		flash[:error] = "Picture could not be uploaded"			
+	end 
+end
+
 
 
 	private 
