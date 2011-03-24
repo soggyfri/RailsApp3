@@ -51,10 +51,12 @@ class UsersController < ApplicationController
 		
 		@microposts = Micropost.find_all_by_recipient(@user).paginate(:page => params[:page])
 		
-		
-	#	@count = @user.user_images.count
-		if @user.user_images.count != 0
-			@image = @user.user_images.find(1 + rand(@user.user_images.count) % @user.user_images.count )
+
+		@count = @user.user_images.count
+		if @count >= 1
+			@AllImages = @user.user_images.all
+			@rand = rand(@AllImages.count) % @AllImages.count
+			@image = @AllImages[@rand]
 		else 			
 			@image = nil
  		end 
